@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100&display=swap");
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #f5faff;
 }
 
 .wrapper {
@@ -16,6 +17,7 @@ body {
   width: 10rem;
   border: none;
   border-radius: 25px;
+  font-weight: bolder;
 }
 
 .content {
@@ -56,6 +58,15 @@ body {
   row-gap: 0.5rem;
   justify-content: center;
   align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 800px) {
+  .main__bl__item {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+  }
 }
 .main__bl h1,
 .main__bl h2 {
@@ -79,16 +90,34 @@ body {
   background-image: url(images/screen-mockups.svg);
 }
 
-#grow--together {
+@media screen and (min-width: 800px) {
+  #grow--together {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 1rem;
+  }
+}
+#grow--together--bg {
   background-image: url(images/illustration-grow-together.svg);
 }
 
-#conversation {
+#conversation--bg {
   background-image: url(images/illustration-flowing-conversation.svg);
 }
 
-#user {
+@media screen and (min-width: 800px) {
+  #user {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 1rem;
+  }
+}
+#user--bg {
   background-image: url(images/illustration-your-users.svg);
+}
+
+.overview__item i {
+  color: #ff52bf;
 }
 
 .bl__footer {
@@ -97,11 +126,47 @@ body {
   padding-top: 30px;
   padding-bottom: 30px;
 }
+@media screen and (min-width: 800px) {
+  .bl__footer {
+    position: relative;
+  }
+}
+@media screen and (min-width: 800px) {
+  .bl__footer #footer--brand {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
 .bl__footer__item {
   display: flex;
   flex-direction: column-reverse;
   row-gap: 1rem;
   margin: auto 20px auto 20px;
+}
+@media screen and (min-width: 800px) {
+  .bl__footer__item {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+  }
+}
+.bl__footer__item p {
+  text-align: left;
+}
+@media screen and (min-width: 800px) {
+  .bl__footer #contact {
+    margin-top: 2rem;
+  }
+}
+.bl__footer #social {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 1rem;
 }
 
 .form {
@@ -110,6 +175,15 @@ body {
   row-gap: 0.5rem;
   width: 90%;
   margin-top: 1rem;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+@media screen and (min-width: 800px) {
+  .form {
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+  }
 }
 .form--input {
   height: 30px;
@@ -117,8 +191,12 @@ body {
   border-radius: 5px;
 }
 .form--btn {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.form--btn button {
   border-radius: 5px;
-  margin-left: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */
