@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100&display=swap");
+
+$pink: hsl(322, 100%, 66%);
+$light--pink: hsl(321, 200%, 78%);
+$light--red: hsl(0, 100%, 63%);
+
+$Dark--Cyan: hsl(192, 100%, 9%);
+$Pale--Blue: hsl(207, 100%, 98%);
+
+$mobile--ratio: 375px;
+$laptop--ratio: 800px;
+$desktop--ratio: 1400px;
+
+@mixin flexDisplay($direction, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  @if $direction == column or $direction == column-reverse {
+    row-gap: $gap;
+  } @else if $direction == row or $direction == row-reverse {
+    column-gap: $gap;
+  }
+}
+
+@mixin gridDisplay() {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+@mixin primaryBtn() {
+  background: $pink;
+  color: white;
+  height: 30px;
+  width: 10rem;
+  border: none;
+  border-radius: 25px;
+}
+
+@mixin contentFormat() {
+  text-align: center;
+  font-size: 14px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  @include flexDisplay(column, 1rem);
+}
+
+.btn--primary {
+  @include primaryBtn();
+}
+
+.content {
+  @include contentFormat();
+}
+
+.navbar {
+  width: 100%;
+  @include flexDisplay(row, 0);
+  justify-content: space-between;
+  align-items: center;
+  .btn--secondary {
+    border: 1px solid $pink;
+    color: $pink;
+    border-radius: 25px;
+    height: 30px;
+    width: 7rem;
+    background: white;
+  }
+}
+
+.main__bl {
+  @include flexDisplay(column, 1rem);
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto 50px auto;
+  &__item {
+    @include flexDisplay(column, 0.5rem);
+    justify-content: center;
+    align-items: center;
+  }
+  h1,
+  h2 {
+    text-align: center;
+  }
+}
+#bl--introduction {
+  height: 80vh;
+  padding: 20px;
+}
+.item--bg {
+  height: 60vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#mockup {
+  background-image: url(images/screen-mockups.svg);
+}
+#grow--together {
+  background-image: url(images/illustration-grow-together.svg);
+}
+#conversation {
+  background-image: url(images/illustration-flowing-conversation.svg);
+}
+#user {
+  background-image: url(images/illustration-your-users.svg);
+}
+.bl__footer {
+  background-color: $Dark--Cyan;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  &__item {
+    @include flexDisplay(column-reverse, 1rem);
+    margin: auto 20px auto 20px;
+  }
+}
+
+.form {
+  @include flexDisplay(column, 0.5rem);
+  width: 90%;
+  margin-top: 1rem;
+  &--input {
+    height: 30px;
+    width: 100%;
+    border-radius: 5px;
+  }
+  &--btn {
+    border-radius: 5px;
+    margin-left: 50%;
+  }
+}
